@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 头像部分 -->
+  <view class="head_tatol">
+    <view class="text">
+      <image src="{{detailUsers.photo?detailUsers.photo:'/static/image/img/user_baground.webp'}}"></image>
+      <view class="right">
+        <view class="name">{{detailUsers.nickname?detailUsers.nickname:'暂无'}}</view>
+        <view class="email">邮箱</view>
+        <view class="email_content">{{detailUsers.email?detailUsers.email:'暂无'}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 简介部分 -->
+  <view class="intor_container">
+    <view>个人简介</view>
+    <text>{{detailUsers.awards}}</text>
+  </view>
+  <!-- 教育部分 -->
+  <view class="education_container">
+    <view class="tatil">教育经历</view>
+    <view wx:for="{{detailUsers.education}}" wx:key="index">
+      <text class="demo">{{item}}</text>
+    </view>
+  </view>
+  <!-- 成就简介 -->
+  <view class="achievement_container">
+    <view class="title">主要成就简介</view>
+    <text>{{detailUsers.epr}}</text>
+  </view>
+
+  <!-- 登陆跳转按钮 -->
+  <view wx:if="{{users.isTeacher===1}}" class="btn" bindtap="goOptions">
+    <view>选导师</view>
+    <image src="/static/image/img/gogogo.jpeg"></image>
+  </view>
+</view>

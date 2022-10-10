@@ -1,0 +1,77 @@
+<view class="container">
+  <!-- 底部导航栏 -->
+  <view class="footer_nav">
+    <view id="teacher" bindtap="updateIsShow" class="teacher {{isShow==='teacher'?'blue':''}}">导师匹配详情</view>
+    <view id="feedback" bindtap="updateIsShow" class="feedback {{isShow==='feedback'?'blue':''}}">问题反馈</view>
+  </view>
+  <view class="content_container">
+    <!-- 导师匹配详情 -->
+    <block wx:if="{{isShow==='teacher'}}">
+      <!-- 头部导航栏 -->
+      <view class="head_nav">
+        <scroll-view class="scroll_x" scroll-with-animation="true" 	scroll-into-view="{{'scroll'+teacherId}}" scroll-x scroll-y="false" enable-flex="true">
+          <view class="demo" id="{{'scroll'+item.id}}" wx:for="{{headNavList}}" wx:key="id">
+            <text class="{{teacherId === item.id? 'text':''}}" id="{{item.id}}" bindtap="getstudentList">{{item.nickname}}</text>
+          </view>
+        </scroll-view>
+      </view>
+      <scroll-view class="scroll_y" scroll-y="true" scroll-x="false" enable-flex="true">
+        <view class="demo" wx:for="{{studentList}}" wx:key="id">
+          <view class="time">{{item.submit_time}}</view>
+          <view class="content">
+            <view class="test">
+              <text>学院</text>
+              <text>{{item.school}}</text>
+            </view>
+            <view class="test">
+              <text>专业</text>
+              <text>{{item.domain}}</text>
+            </view>
+            <view class="test">
+              <text>班级</text>
+              <text>{{item._class}}</text>
+            </view>
+            <view class="test">
+              <text>学号</text>
+              <text>{{item.student_number}}</text>
+            </view>
+            <view class="test">
+              <text>姓名</text>
+              <text>{{item.nickname}}</text>
+            </view>
+            <view class="test">
+              <text>学生电话</text>
+              <text>{{item.student_phone}}</text>
+            </view>
+            <view class="end">
+              <text>导师寄语:</text>
+              <view class="jiyu">{{item.comment}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </block>
+    <!-- 问题反馈模块 -->
+    <block wx:else>
+      <scroll-view class="scroll_y" scroll-y="true" scroll-x="false" enable-flex="true">
+        <view class="demo" wx:for="{{FeedbackList}}" wx:key="id">
+          <view class="time">{{item.time}}</view>
+          <view class="content">
+            <view class="test">
+              <text>姓名</text>
+              <text>{{item.name}}</text>
+            </view>
+            <view class="test">
+              <text>电话</text>
+              <text>{{item.phone}}</text>
+            </view>
+            <view class="end">
+              <text>反馈问题:</text>
+              <i-input i-class="doc" mode="normal" value="{{item.feedback_content}}" type="text" disabled />
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </block>
+  </view>
+</view>

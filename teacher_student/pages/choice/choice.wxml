@@ -1,0 +1,75 @@
+<view class="container">
+  <!-- 学生区域 -->
+  <block wx:if="{{users.isTeacher==1}}">
+    <!-- 背景 -->
+    <image class="background" src="/static/image/img/background.gif"></image>
+    <!-- 意向填写模块 -->
+    <view class="choice_container_student" wx:if="{{users.isTeacher==1}}">
+      <view class="title">导师意向申报</view>
+      <view class="from">
+        <view class="name">
+          <view>学院</view>
+          <view class="input">{{users.school}}</view>
+        </view>
+        <view class="name">
+          <view>专业</view>
+          <view class="input">{{users.domain}}</view>
+        </view>
+        <view class="name">
+          <view>姓名</view>
+          <view class="input">{{users.nickname}}</view>
+        </view>
+        <view class="name">
+          <view>班级</view>
+          <view class="input">{{users._class}}</view>
+        </view>
+        <view class="name">
+          <view>意向导师 <text class="red">*</text></view>
+          <input value="{{choice_teacher}}" class="input" bindinput="getInput" placeholder="意向导师" placeholder-style="font-size:25rpx" type="text" />
+        </view>
+        <view class="tishi">带 <text class="red">*</text> 的为必填项</view>
+      </view>
+      <view class="btn" bindtap="setChoise">点击提交</view>
+    </view>
+  </block>
+  <!-- 老师区域 -->
+  <block wx:else>
+    <view class="container_teacher">
+      <view class="title">我的申请</view>
+      <view class="choice_teacher" wx:for="{{choiceStudentList}}" wx:key="index">
+        <view class="demo">
+          <view>姓名:</view>
+          <view>{{item.nickname}}</view>
+        </view>
+        <view class="demo">
+          <view>学院:</view>
+          <view>{{item.school}}</view>
+        </view>
+        <view class="demo">
+          <view>专业:</view>
+          <view>{{item.domain}}</view>
+        </view>
+        <view class="demo">
+          <view>学号:</view>
+          <view>{{item.student_number}}</view>
+        </view>
+        <view class="demo">
+          <view>电话:</view>
+          <view>{{item.student_phone}}</view>
+        </view>
+        <view class="demo">
+          <view>宿舍:</view>
+          <view>{{item.student_dorm}}</view>
+        </view>
+        <view class="textContent">
+          <view>老师寄语:</view>
+          <textarea bindinput="getInputContent" placeholder="好好学习，天天向上" placeholder-style="font-size:28rpx" maxlength="-1" confirm-type="done"></textarea>
+        </view>
+        <view class="btn">
+          <view class="left" bindtap="setChoiseApply" data-time="{{item.submit_time}}" data-id="{{item.id}}" id="yes">同意申请</view>
+          <view class="right" bindtap="setChoiseApply" data-time="{{item.submit_time}}" data-id="{{item.id}}" id="no">驳回申请</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

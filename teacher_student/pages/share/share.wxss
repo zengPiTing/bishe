@@ -1,0 +1,18 @@
+.container{
+  width: 100%;
+}
+
+.title{
+  width: 300rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 38rpx;
+  margin: 50rpx auto 0;
+}
+image{
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+  margin: 100rpx auto;
+}

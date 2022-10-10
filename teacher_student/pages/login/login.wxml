@@ -1,0 +1,37 @@
+<view class="container">
+  <!-- 背景 -->
+  <image class="background" src="/static/image/img/background.gif"></image>
+  <!-- 登录模块 -->
+  <view class="login_container">
+    <!-- 用户账号 -->
+    <view class="syudent_number">
+      <view>账号</view>
+      <input type="text" bindinput="getInputContent" data-id="studentNumber" maxlength="9" placeholder-style="color:white;font-size:28rpx" placeholder="请输入账号" />
+      <view wx:if="{{is_yes_no.is_student.isshow}}" class="judgment">
+        <text class="yes iconfont {{is_yes_no.is_student.yes_no?'icon-zhengque green':'icon-cuowuguanbiquxiao-xianxingyuankuang red'}}"></text>
+        <text class="yes_no">{{is_yes_no.is_student.hint}}</text>
+      </view>
+      <view class="else" wx:else></view>
+    </view>
+    <!-- 用户秘码 -->
+    <view class="password">
+      <view>密码</view>
+      <input type="password" bindinput="getInputContent" data-id="password" maxlength="15" placeholder-style="color:white;font-size:28rpx" placeholder="请输入密码" />
+      <view wx:if="{{is_yes_no.is_password.isshow}}" class="judgment">
+        <text class="no iconfont {{is_yes_no.is_password.yes_no?'icon-zhengque green':'icon-cuowuguanbiquxiao-xianxingyuankuang red'}}"></text>
+        <text class="yes_no">{{is_yes_no.is_password.hint}}</text>
+      </view>
+      <view class="else" wx:else></view>
+    </view>
+    <!-- 老师勾选 -->
+    <view class="teacher">
+      <checkbox class="checkbox" checked="{{isTeacher}}" bindtap="checkChange"></checkbox>
+      <text class="text_check">老师登陆请勾选</text>
+    </view>
+    <!-- 登录按钮 -->
+    <view class="login">
+      <view class="btn" bindtap="getLogin">登录</view>
+    </view>
+  </view>
+
+</view>

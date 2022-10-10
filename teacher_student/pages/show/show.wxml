@@ -1,0 +1,29 @@
+<view class="container">
+  <!-- 标题模块 -->
+  <view class="title_container">
+    <scroll-view class="scroll" scroll-into-view="{{'scroll'+domain_id}}" scroll-with-animation scroll-x scroll-y="false" enable-flex="true">
+      <view class="demo" id="{{'scroll'+item.id}}" wx:for="{{showTitle}}" wx:key="id">
+        <view class="{{item.id == domain_id? 'active':''}}" id="{{item.id}}" bindtap="getShowUsers_handler">{{item.title}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 内容模块 -->
+  <view class="content_container">
+    <scroll-view class="scroll_y" scroll-y scroll-x="false">
+      <view class="demo" wx:for="{{teacherUsers}}" wx:key="id" id="{{index}}" bindtap="goDetail">
+        <view class="text">
+          <image src="{{item.photo?item.photo:'/static/image/img//user_baground.webp'}}"></image>
+          <view class="right">
+            <view class="name">{{item.nickname}}</view>
+            <view class="email">邮箱</view>
+            <view class="email_content">{{item.email? item.email:'暂无'}}</view>
+          </view>
+        </view>
+        <view class="intro">
+          <view class="title">简介</view>
+          <view class="intro_content">{{item.awards? item.awards:'暂无'}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

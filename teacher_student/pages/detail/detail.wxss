@@ -1,0 +1,112 @@
+.container{
+  padding: 20rpx;
+  position: relative;
+}
+
+/* 头像部分 */
+.head_tatol{
+  background: #f5f5f5;
+  border-radius: 20rpx;
+}
+
+.head_tatol .text {
+  display: flex;
+  align-items: center;
+}
+
+.head_tatol .text image {
+  margin: 20rpx;
+  width: 250rpx;
+  height: 280rpx;
+  border-radius: 20rpx;
+}
+
+
+.head_tatol .right .name {
+  margin: 0 10rpx 10rpx 10rpx;
+  font-size: 40rpx;
+}
+.head_tatol .right .email{
+  font-size: 36rpx;
+  margin-left: 10rpx;
+}
+.head_tatol .right .email_content{
+  font-size: 30rpx;
+  margin: 5rpx  10rpx 0;
+}
+
+/* 个人简介部分 */
+.intor_container{
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+.intor_container view{
+  font-size: 36rpx;
+}
+
+.intor_container text{
+  font-size: 30rpx;
+}
+
+.education_container{
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+
+.education_container .tatil{
+font-size: 36rpx;
+}
+
+.education_container .demo{
+  font-size: 30rpx;
+  padding-top: 20rpx;
+}
+
+.achievement_container{
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+
+.achievement_container .title{
+  font-size: 36rpx;
+}
+
+.achievement_container text{
+  font-size: 30rpx;
+}
+
+
+/* go go go按钮部分 */
+.btn{
+  position: fixed;
+  top: 500rpx;
+  right: 20rpx;
+  width: 180rpx;
+  height: 180rpx;
+  opacity: .9;
+  border-radius: 50%;
+}
+.btn image{
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  z-index: 1;
+}
+.btn view{
+  position: absolute;
+  width: 80rpx;
+  height: 30rpx;
+  top: 65%;
+  left: 50%;
+  margin-left: -40rpx;
+  z-index: 100;
+  font-size: 25rpx;
+  color: #f4d25b;
+}

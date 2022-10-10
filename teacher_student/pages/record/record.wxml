@@ -1,0 +1,69 @@
+<view class="container">
+  <view class="head">
+    <view id="teacher" class="teacher {{isShow=='teacher'? 'action':''}}" bindtap="updateStatus">我的导师</view>
+    <view id="record" class="record {{isShow=='record'? 'action':''}}" bindtap="updateStatus">申请记录</view>
+  </view>
+  <view class="content_container">
+    <view class="teacher_content" wx:if="{{isTeacher&&isShow=='teacher'}}">
+      <view class="test">
+        <text>姓名</text>
+        <text class="content">{{users.nickname}}</text>
+      </view>
+      <view class="test">
+        <text>年级</text>
+        <text class="content">{{users.year}}级</text>
+      </view>
+      <view class="test">
+        <text>专业</text>
+        <text class="content">{{users.domain}}</text>
+      </view>
+      <view class="test">
+        <text>班级</text>
+        <text class="content">{{users._class}}</text>
+      </view>
+      <view class="test">
+        <text>学号</text>
+        <text class="content">{{users.student_number}}</text>
+      </view>
+      <view class="test">
+        <text>导师</text>
+        <text class="content">{{users.daoshi_name}}</text>
+      </view>
+      <view class="end">
+        <text>导师寄语:</text>
+        <view class="remark">{{users.comment}}</view>
+      </view>
+    </view>
+    <view class="record_content" wx:if="{{isRecord&&isShow=='record'}}">
+      <view class="list" wx:for="{{recordList}}" wx:key="index">
+        <view class="submitTime">{{item.submit_time}}</view>
+        <view class="color">
+          <view class="demo">
+            <text>提交用户</text>
+            <text>{{item.student_name}}</text>
+          </view>
+          <view class="demo">
+            <text>意向导师</text>
+            <text>{{item.teacher_name}}</text>
+          </view>
+          <block wx:if="{{item.is_yes}}">
+            <view class="demo">
+              <text>申请状态</text>
+              <text>{{item.is_yes=='yes'?'已同意':'已驳回'}}</text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="demo">
+              <text>申请状态</text>
+              <text>审阅中</text>
+            </view>
+          </block>
+          <view class="demo" wx:if="{{item.reject_time}}">
+            <text>老师审阅时间</text>
+            <text>{{item.reject_time}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

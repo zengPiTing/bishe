@@ -1,0 +1,85 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 头部区域 */
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background:rgba(0,0,0,.05);
+  border-bottom: 1rpx solid rgba(0, 0, 0, .3);
+}
+
+.head .teacher,
+.head .record {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 36rpx;
+}
+
+.action {
+  color: skyblue;
+  background:rgba(0,0,0,.08);
+}
+
+/* 老师部分 */
+.content_container{
+  width: 100%;
+  margin-top: 130rpx;
+}
+
+.content_container .record_content{
+  width: 100%;
+  margin: 0 auto;
+}
+.record_content .submitTime{
+  text-align: center;
+  font-size: 32rpx;
+}
+.record_content .color{
+  margin: 30rpx 20rpx 50rpx 20rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+}
+
+.record_content .demo{
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 30rpx;
+}
+
+/* 学生部分 */
+.teacher_content{
+  margin: 20rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  padding: 20rpx 0 20rpx 30rpx;
+}
+
+.teacher_content .test {
+  display: flex;
+  justify-content: space-between;
+  font-size: 34rpx;
+}
+
+.teacher_content .test .content{
+  margin-right: 50rpx;
+  margin-bottom: 25rpx;
+}
+
+.teacher_content.end{
+  padding-bottom: 20rpx;
+}
+
+.remark{
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+}

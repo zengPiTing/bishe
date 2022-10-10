@@ -1,0 +1,7 @@
+<view class="container">
+  <i-input mode="normal" disabled type="text" title="预留信息" placeholder="请预留姓名及号码，方便后续反馈" />
+  <i-input id="name" bind:change="getInput" value="{{ name }}" type="text" title="姓名" placeholder="预留姓名" />
+  <i-input id="phone" bind:change="getInput" value="{{ phone }}" type="text" title="电话" placeholder="预留电话" />
+  <i-input id="fellback" bind:change="getInput" value="{{ fellback }}" type="textarea" title="反馈内容" placeholder="详细反馈内容" />
+  <button bindtap="getFeedback">点击提交</button>
+</view>

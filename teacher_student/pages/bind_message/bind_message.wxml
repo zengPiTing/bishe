@@ -1,0 +1,26 @@
+<view class="container">
+  <block wx:if="{{users.isTeacher==1}}">
+    <view class="head">
+      请按要求进行信息绑定
+    </view>
+    <i-panel title="基础用法">
+      <i-input value="{{ users.nickname }}" type="text" title="姓名" disabled />
+      <i-input value="{{ users.student_number }}" type="text" title="学号" disabled />
+      <i-input id="student_phone" bind:change="getInput" value="{{ student_phone }}" type="number" title="联系电话" placeholder="请输入手机号" />
+      <i-input id="school" bind:change="getInput" value="{{ school }}" type="text" title="学院" placeholder="学院" />
+      <i-input id="domain" bind:change="getInput" value="{{ domain }}" type="text" title="专业" placeholder="专业" />
+      <i-input id="_class" bind:change="getInput" value="{{ _class }}" type="number" title="班级" placeholder="例:2119401" />
+      <i-input id="student_dorm" bind:change="getInput" value="{{ student_dorm }}" type="text" title="宿舍" placeholder="例:博学X栋XXX" />
+      <i-input id="year" bind:change="getInput" value="{{ year }}" type="number" title="入学时间" placeholder="例:2019" />
+    </i-panel>
+    <view class="btn" bindtap="setUsers">点击提交</view>
+  </block>
+  <block wx:else="{{users.isTeacher==0}}">
+    <i-input value="{{ users.nickname }}" type="text" title="姓名" disabled />
+    <i-input value="{{ users.school }}" type="text" title="学院" disabled />
+    <i-input value="{{ users.awards }}" type="text" title="简介" disabled />
+    <i-input value="{{ users.education }}" type="text" title="学历背景" disabled />
+    <i-input value="{{ users.epr }}" type="text" title="成就简历" disabled />
+    <i-input value="{{ users.isManager==0?'管理员':'非管理员' }}" type="text" title="管理身份" disabled />
+  </block>
+</view>

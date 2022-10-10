@@ -1,0 +1,94 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* 背景 */
+.container .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* 登录模块 */
+.container .login_container {
+  position: absolute;
+  width: 550rpx;
+  height: 600rpx;
+  top: 300rpx;
+  left: 100rpx;
+  border: 1rpx solid white;
+  border-radius: 20rpx;
+  z-index: 1;
+  box-shadow: 10rpx 10rpx 30rpx 10rpx #a2a3a9;
+}
+
+/* 用户账户、密码 */
+.login_container .syudent_number {
+  padding: 20rpx 20rpx 10rpx;
+}
+
+.login_container .password {
+  padding: 20rpx;
+}
+
+.container .login_container input {
+  margin-top: 10rpx;
+  color: white;
+  border-bottom: 1rpx solid #a2a3a9;
+}
+
+.login_container .judgment,
+.login_container .else {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.judgment .yes_no{
+  font-size: 20rpx;
+}
+
+.login_container .yes {
+  margin-right: 10rpx;
+  font-size: 30rpx;
+}
+.login_container .no {
+  margin-right: 10rpx;
+  font-size: 30rpx;
+}
+
+/* checkbox */
+.teacher{
+  display: flex;
+  align-items: center;
+  margin: 10rpx 0 60rpx 10rpx;
+}
+
+.checkbox{
+  transform: scale(0.5,0.5);
+}
+.text_check{
+  font-size: 28rpx;
+}
+
+/* 登陆按钮 */
+.login_container .login{
+  margin: 0 auto;
+  width: 200rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 1rpx solid white;
+  border-radius: 30rpx;
+}
+
+/* 正确错误提示信息 */
+.green{
+  color: greenyellow;
+}
+.red{
+  color: red;
+}

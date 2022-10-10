@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- 背景模块 -->
+  <view class="container_background">
+    <image src="/static/image/img/user_baground.webp"></image>
+    <view class="headPhoto" bindtap="gologin">{{first_nickname}}</view>
+    <view class="userInfo" bindtap="gouserInfo">
+      <view class="user">
+        <view class="text">{{nickname}}</view>
+        <view class="text">{{school?school:'未绑定信息'}}</view>
+        <text class="img iconfont icon-gengduo"></text>
+      </view>
+    </view>
+  </view>
+  <!-- 内容模块 -->
+  <view class="cover_container">
+    <image class="cover" src="/static/image/img/arc.png"></image>
+    <view class="content">
+      <block wx:if="{{isTeacher===1}}">
+        <view class="text1" id="xinxi" bindtap="gonext">
+          <text class="img iconfont icon-bangdingshebei"></text>
+          <text>信息绑定</text>
+          <text class="more iconfont icon-gengduo1"></text>
+        </view>
+      </block>
+      <block wx:else="{{isTeacher===0}}">
+        <view class="text1" id="xinxi" bindtap="gonext">
+          <text class="img iconfont icon-bangdingshebei"></text>
+          <text>信息查看</text>
+          <text class="more iconfont icon-gengduo1"></text>
+        </view>
+      </block>
+
+      <view class="text2" id="mima" bindtap="gonext">
+        <text class="img iconfont icon-mimaxiugai"></text>
+        <text>修改密码</text>
+        <text class="more iconfont icon-gengduo1"></text>
+      </view>
+    </view>
+    <view class="content">
+      <view class="text1" id="fankui" bindtap="gonext">
+        <text class="img iconfont icon-yijianfankui"></text>
+        <text class="guai">意见反馈</text>
+        <text class="more iconfont icon-gengduo1"></text>
+      </view>
+      <view class="text2" id="fenxiang" bindtap="gonext">
+        <text class="img iconfont icon-fenxiangxiao"></text>
+        <text>搜索分享</text>
+        <text class="more iconfont icon-gengduo1"></text>
+      </view>
+    </view>
+      <view class="daoshi_container" id="guanli" bindtap="gonext">
+      <view class="left">
+        <text class="img iconfont icon-guanliyuan_jiaoseguanli"></text>
+        <text>管理通道</text>
+      </view>
+      <view class="right">
+        <text class="more iconfont icon-gengduo1"></text>
+      </view>
+      </view>
+  </view>
+</view>

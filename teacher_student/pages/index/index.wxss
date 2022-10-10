@@ -1,0 +1,191 @@
+.container {
+  background: white;
+  height: 100%;
+}
+
+/* 轮播图模块 */
+.container .swiper {
+  position: relative;
+  width: 100%;
+  height: 430rpx;
+}
+
+.container .swiper image {
+  width: 100%;
+  z-index: 0;
+}
+
+.container .swiper .content {
+  position: absolute;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  bottom: 0;
+  z-index: 100;
+  background: #1b1a1a;
+  color: #ccc;
+  opacity: .8;
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 导航模块 */
+.navigation {
+  width: 100%;
+  height: 200rpx;
+  background: rgba(0, 0, 0, .05);
+}
+
+/* 登录按钮 */
+.navigation .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 30rpx;
+}
+
+.navigation .login .go_login {
+  width: 300rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #87cedf;
+  border-radius: 30rpx;
+  font-size: 35rpx;
+}
+
+.navigation .login .text {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+}
+
+/* 导航栏 */
+.navigation .tab {
+  display: flex;
+  padding-top: 10rpx;
+}
+
+.navigation .tab .go {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.go .iconfont {
+  width: 100rpx;
+  margin: 20rpx 20rpx 0;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  background: white;
+  color: #87cedf;
+  font-size: 65rpx;
+}
+
+.go .text {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+
+/* 学院精彩时刻模块 */
+.wonderful_moment {
+  margin-top: 10rpx;
+  width: 100%;
+  background: rgba(0, 0, 0, .05);
+}
+
+/* 导师风向标*/
+.wonderful_moment .head {
+  position: relative;
+  border: 1rpx solid rgba(0, 0, 0, .1);
+}
+
+.wonderful_moment .head .title {
+  display: block;
+  margin: 10rpx 20rpx;
+  font-size: 35rpx;
+}
+
+
+.wonderful_moment .content {
+  height: 250rpx;
+}
+
+.wonderful_moment .content .scroll_x {
+  display: flex;
+  height: 100%;
+}
+
+.wonderful_moment .content .title {
+  width: 25%;
+  margin: 10rpx;
+}
+
+.wonderful_moment .content .text_title {
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.wonderful_moment .content .text_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wonderful_moment .content .name {
+  font-size: 30rpx;
+}
+
+/* 学生风采 */
+.scroll_y{
+  height: 300rpx;
+  width: 100%;
+}
+
+.excellent_student {
+  position: relative;
+  width: 100%;
+  height: 250rpx;
+  margin-bottom: 20rpx;
+}
+
+.excellent_student image {
+  width: 250rpx;
+  margin-left: 10rpx;
+  height: 250rpx;
+  border-radius: 20rpx;
+}
+
+.excellent_student .content {
+  position: absolute;
+  height: 180rpx;
+  /* background: #000; */
+  top: 10rpx;
+  left: 270rpx;
+  right: 10rpx;
+}
+
+.excellent_student .content .title {
+  font-size: 38rpx;
+}
+
+.excellent_student .content .text {
+  height: 180rpx;
+  font-size: 30rpx;
+  /* 2行隐藏就两倍，三行隐藏就三倍*/
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+  height: 80px;
+}

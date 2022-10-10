@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+}
+
+.head{
+  margin: 20rpx ;
+  margin-bottom: 50rpx;
+}
+
+.btn{
+  width: 200rpx;
+  height: 60rpx;
+  margin: 100rpx auto;
+  text-align: center;
+  line-height: 60rpx;
+  border: 1rpx solid rgba(0, 0, 0, .5);
+  border-radius: 20rpx;
+}

@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bind_message/bind_message",
+    "pages/feedback/feedback",
+    "pages/choice/choice",
+    "pages/detail/detail",
+    "pages/password/password",
+    "pages/management/management",
+    "pages/share/share",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/show/show",
+    "pages/userInfo/userInfo",
+    "pages/record/record"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#87cedf"
+  },
+  "tabBar": {
+    "color": "#9d9d9d",
+    "selectedColor": "#2fa3df",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/image/tabBar_img/index.png",
+        "selectedIconPath": "/static/image/tabBar_img/index_checked.png"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "text": "展示",
+        "iconPath": "/static/image/tabBar_img/show.png",
+        "selectedIconPath": "/static/image/tabBar_img/show_checked.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "主页",
+        "iconPath": "/static/image/tabBar_img/my.png",
+        "selectedIconPath": "/static/image/tabBar_img/my_checked.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

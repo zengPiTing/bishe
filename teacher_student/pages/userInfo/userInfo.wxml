@@ -1,0 +1,75 @@
+<view class="container">
+  <!-- 头部区域 -->
+  <view class="header">
+    <view class="headtatol">{{first_nickname}}</view>
+    <view class="user">
+      <view>{{usersInfo.school}}</view>
+      <view>{{usersInfo.nickname}}</view>
+    </view>
+  </view>
+  <!-- 老师区域 -->
+  <view class="teacher" wx:if="{{status}}">
+    <view class="tilte">门下学生</view>
+    <scroll-view wx:if="{{studentList.length>0}}" class="recommendScroll" enable-flex scroll-x scroll-y="false">
+      <view class="demo" wx:for="{{studentList}}" wx:key="index">
+        <view class="student">{{item.nickname}}</view>
+        <view class="test">
+          <text>年级</text>
+          <text class="content">{{item.year}}级</text>
+        </view>
+        <view class="test">
+          <text>专业</text>
+          <text class="content">{{item.domain}}</text>
+        </view>
+        <view class="test">
+          <text>班级</text>
+          <text class="content">{{item._class}}</text>
+        </view>
+        <view class="test">
+          <text>学号</text>
+          <text class="content">{{item.student_number}}</text>
+        </view>
+        <view class="test">
+          <text>电话</text>
+          <text class="content">{{item.student_phone}}</text>
+        </view>
+        <view class="test">
+          <text>宿舍</text>
+          <text class="content">{{item.student_dorm}}</text>
+        </view>
+        <view class="end">
+          <text>寄语:</text>
+          <view class="remark">{{item.comment}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="noHave" wx:else>暂无学生</view>
+  </view>
+  <!-- 学生区域 -->
+  <view class="student" wx:else>
+    <view class="test">
+      <text class="title">姓名</text>
+      <text class="nickname">{{usersInfo.nickname}}</text>
+    </view>
+    <view class="test">
+      <text class="title">学号</text>
+      <text class="nickname">{{usersInfo.student_number}}</text>
+    </view>
+    <view class="test">
+      <text class="title">专业</text>
+      <text class="nickname">{{usersInfo.domain}}</text>
+    </view>
+    <view class="test">
+      <text class="title">班级</text>
+      <text class="nickname">{{usersInfo._class}}</text>
+    </view>
+    <view class="test">
+      <text class="title">导师</text>
+      <text class="nickname">{{usersInfo.daoshi_name?usersInfo.daoshi_name:'暂无导师'}}</text>
+    </view>
+    <view class="test">
+      <text class="title">入学年份</text>
+      <text class="nickname">{{usersInfo.year}}</text>
+    </view>
+  </view>
+</view>
